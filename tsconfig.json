@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "lib": [
+      "dom",
+      "ES6"
+    ],
+    "outDir": "dist",
+    "watch": true,
+    "noImplicitAny": false
+  }
+}
