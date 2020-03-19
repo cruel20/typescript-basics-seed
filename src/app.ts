@@ -66,3 +66,56 @@ const { pizzaName } = orderr(pizzza);
 
 const toppingsss = ["pepperoni", "bacon", "chilli"];
 const [one, two, three] = toppingsss;
+
+console.log("------------------");
+
+const coupon: string = "pizza25";
+
+function normalizeCoupon(code: string): string {
+  return code.toUpperCase();
+}
+
+const couponMessage: string = `Final coupon is ${normalizeCoupon(coupon)}`;
+
+console.log("------------------");
+
+let coupon1: string | null = "coupon25"; //jezeli chcemy aby mialo stringa LUB null to dajemy | null
+
+console.log("------------------");
+
+let pizzaSize: string = "small";
+
+function selectSize(size: "small" | "medium" | "large"): void {
+  pizzaSize = size;
+}
+
+// let selectSize(size: 'small' | 'medium' | 'large'): void{
+//   pizzaSize = size
+// } MOZNA ZAMIAST FUNCTION DAC LET
+selectSize("medium");
+
+console.log("------------------");
+
+let pizzass: { name: string; price: number };
+pizzass = { name: "dssd", price: 20 };
+
+console.log("------------------");
+
+type Size = "small" | "medium" | "large"; // Custom type
+type Callback = (size: Size) => void;
+
+let pizzaSizes: Size = "small";
+const selectSizes: Callback = x => {
+  pizzaSize = x;
+};
+
+JSON.parse("") as Size; // to co sparsuje do jsona to będzie wykorzystywać jako typ Size
+
+interface Sizes {
+  sizes: string[];
+}
+interface Pizza extends Sizes {
+  name: string;
+  getAvailasbleSizes(): string[]; // metoda
+  [key: number]: string; // dictionary - dynamiczne rozszerzenie interface o słownik
+}
